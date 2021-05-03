@@ -2,7 +2,7 @@
 
 Funcionalidades
 * Inicio/LogIn
-    El APK implementa el login propio del SDK.
+    El APK instancia un browser para realizar el inicio de sesion.
 
 * Cierre de sesion/LogOut
     Se implemento un boton el cual hace la llamada a la funcion propia del SDK para lograr, exitosamente, el cierre de sesion.
