@@ -40,10 +40,12 @@ public class MainActivity extends AppCompatActivity{
     }
 
     public void launchBrowser() {
+        clWelcome = findViewById(R.id.clWelcome);
+        clProgressBar = findViewById(R.id.clProgressBar);
         FRUser.browser().appAuthConfigurer()
                 .authorizationRequest(r -> {
                     Map<String, String> additionalParameters = new HashMap<>();
-                    additionalParameters.put("acr_values", "sdkAuthenticationTree");
+                    additionalParameters.put("acr_values", "Login2");
                     additionalParameters.put("KEY2", "VALUE2");
                 })
                 .customTabsIntent(t -> {
@@ -59,6 +61,8 @@ public class MainActivity extends AppCompatActivity{
 
                     @Override
                     public void onException(Exception e) {
+                        clWelcome.setVisibility(View.VISIBLE);
+                        clProgressBar.setVisibility(View.INVISIBLE);
                     }
                 });
     }
